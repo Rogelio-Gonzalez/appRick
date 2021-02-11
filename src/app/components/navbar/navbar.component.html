@@ -1,0 +1,27 @@
+
+<nav class="navbar navbar-expand-lg navbar- bg color">
+    <a class="navbar-brand" >
+        <img src="assets/img/loguito.svg" width="175" height="70">
+    </a>
+    <button class="navbar-toggler align" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "><i class="fa fa-bars align" aria-hidden="true"></i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link colorTab" [routerLink]="['login']">Sign In </a>
+        </li> 
+        <li class="nav-item active" *ngIf="fire.isAuthenticated()">
+          <a class="nav-link colorTab" [routerLink]="['characters']">Characters </a>
+        </li>
+        <li class="nav-item" *ngIf="fire.isAuthenticated()">
+          <a class="nav-link colorTab" [routerLink]="['favorites']">Favorites</a>
+        </li>
+
+      </ul>
+      <span class="navbar-text">
+        <button class="btn btn-danger "*ngIf="fire.isAuthenticated()" >Log Out</button>
+    </span>
+    </div>
+  </nav>
